@@ -6,11 +6,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "fabrica-de-pokemon": {
+    "app1-pokemon": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "sass"
         }
       },
       "root": "",
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fabrica-de-pokemon",
+            "outputPath": "dist/app1-pokemon",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,7 +31,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.sass"
             ],
             "scripts": []
           },
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fabrica-de-pokemon:build"
+            "browserTarget": "app1-pokemon:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "fabrica-de-pokemon:build:production"
+              "browserTarget": "app1-pokemon:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fabrica-de-pokemon:build"
+            "browserTarget": "app1-pokemon:build"
           }
         },
         "test": {
@@ -94,7 +94,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.sass"
             ],
             "scripts": []
           }
@@ -116,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "fabrica-de-pokemon:serve"
+            "devServerTarget": "app1-pokemon:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "fabrica-de-pokemon:serve:production"
+              "devServerTarget": "app1-pokemon:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "fabrica-de-pokemon"
+  "defaultProject": "app1-pokemon"
 }
