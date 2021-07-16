@@ -6,11 +6,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app1-pokemon": {
+    "my-pokemon": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app1-pokemon",
+            "outputPath": "dist/my-pokemon",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,7 +31,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+
+              "src/styles.css"
+              
             ],
             "scripts": []
           },
@@ -53,13 +55,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -68,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app1-pokemon:build"
+            "browserTarget": "my-pokemon:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app1-pokemon:build:production"
+              "browserTarget": "my-pokemon:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app1-pokemon:build"
+            "browserTarget": "my-pokemon:build"
           }
         },
         "test": {
@@ -94,7 +96,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -116,16 +118,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app1-pokemon:serve"
+            "devServerTarget": "my-pokemon:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app1-pokemon:serve:production"
+              "devServerTarget": "my-pokemon:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "app1-pokemon"
+  "defaultProject": "my-pokemon"
 }
