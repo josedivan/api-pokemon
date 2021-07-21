@@ -1,8 +1,10 @@
 import { Pokemon } from './pokemon.model';
 
 export class PagePokemon {
-  count: number;
-  next: string;
-  previous: string;
-  results: Pokemon[];
+  public count: number;
+  public next: string;
+  public previous: string;
+  public results: Pokemon[];
+  static map: any;
+  static results: any;
 }
