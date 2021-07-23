@@ -12,6 +12,9 @@ import { url } from 'inspector';
 })
 export class PokemonListComponent implements OnInit {
   public pokemons: Pokemon[];
+  page = 1;
+  totalPokemons: number;
+
   error: any;
 
   constructor(private pokemonService: PokemonService) {

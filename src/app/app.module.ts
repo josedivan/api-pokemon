@@ -7,13 +7,18 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PokemonService } from './service/pokemon.service';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [AppComponent, PokemonCardComponent, PokemonListComponent],
 
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [PokemonService , HttpClient],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgxPaginationModule,
+  ],
+  providers: [PokemonService, HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
