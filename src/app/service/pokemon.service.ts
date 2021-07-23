@@ -10,11 +10,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PokemonService {
-  image: any;
-  results: any;
   constructor(private http: HttpClient) {}
 
-  public getPokemons(): Observable<any> {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon`);
+  public getPokemons(): Observable<PagePokemon> {
+    return this.http.get<PagePokemon>(`https://pokeapi.co/api/v2/pokemon`);
   }
 }

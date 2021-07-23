@@ -5,6 +5,4 @@ export class PagePokemon {
   public next: string;
   public previous: string;
   public results: Pokemon[];
-  static map: any;
-  static results: any;
 }
