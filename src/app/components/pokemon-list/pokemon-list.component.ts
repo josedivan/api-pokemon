@@ -2,7 +2,8 @@ import { Pokemon } from './../../models/pokemon.model';
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/service/pokemon.service';
 import { PagePokemon } from 'src/app/models/pagePokemon.model';
-import { url } from 'inspector';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -11,20 +12,22 @@ import { url } from 'inspector';
   providers: [],
 })
 export class PokemonListComponent implements OnInit {
-  public pokemons: Pokemon[];
+  pokemons: Pokemon[];
   page = 1;
   totalPokemons: number;
 
+  pokeList$: Observable<any>;
+
   error: any;
 
-  constructor(private pokemonService: PokemonService) {
+  constructor(private pokemonService: PokemonService) {}
+
+  ngOnInit(): void {
     this.getter();
   }
 
-  ngOnInit(): void {}
-
   getter() {
-    this.pokemonService.getPokemons().subscribe(
+    this.pokemonService.getPokemonList(this.page).subscribe(
       (data: PagePokemon) => {
         data.results.map((item) => {
           const idObj = parseInt(item.url.slice(34, -1));
@@ -40,5 +43,17 @@ export class PokemonListComponent implements OnInit {
         console.error('ERRO:', error);
       }
     );
+  }
+
+  pagePrevious(): void {
+    this.page = this.page === 1 ? this.page : this.page - 1;
+    console.log('pagina: ', this.page);
+    this.getter();
+  }
+
+  pageNext(): void {
+    this.page = this.page + 1;
+    console.log('pagina: ', this.page);
+    this.getter();
   }
 }

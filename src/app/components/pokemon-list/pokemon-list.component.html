@@ -1,12 +1,12 @@
+<h1>Lista de Pokemons</h1>
+<h3>Página {{ page }}</h3>
+
 <app-pokemon-card
   *ngFor="let pokemon of pokemons"
   [pokemon]="pokemon"
 ></app-pokemon-card>
 
-<nav aria-label="Navegação de página exemplo">
-  <ul class="pagination">
-    <li class="page-item1"><a class="page-link" href="#">Anterior</a></li>
-
-    <li class="page-item2"><a class="page-link" href="#">Próximo</a></li>
-  </ul>
-</nav>
+<div class="buttons">
+  <button class="button" (click)="pagePrevious()">Anterior</button>
+  <button class="button" (click)="pageNext()">Próximo</button>
+</div>

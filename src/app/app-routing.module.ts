@@ -1,19 +1,17 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 
 // Declaração de rotas
 const routes: Routes = [
-{
- path: '', component: PokemonListComponent, 
-
-
-}
-
+  {
+    path: '',
+    component: PokemonListComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

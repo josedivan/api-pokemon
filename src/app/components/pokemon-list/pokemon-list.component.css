@@ -1,7 +1,27 @@
+h1 {
+  text-align: center;
+}
+
+h3 {
+  text-align: right;
+  margin: 20px;
+}
+
 .page-item1 {
   margin-left: 10px;
 }
 
 .page-item2 {
   margin-left: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.buttons .button {
+  margin: 10px;
 }
