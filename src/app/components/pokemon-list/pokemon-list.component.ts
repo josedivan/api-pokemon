@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
   providers: [],
 })
 export class PokemonListComponent implements OnInit {
-  pokemons: Pokemon[];
+  pokemons: Pokemon[] = [];
   page = 1;
   totalPokemons: number;
 
@@ -34,7 +34,7 @@ export class PokemonListComponent implements OnInit {
           item.id = idObj;
           item.image = `https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`;
         });
-        this.pokemons = data.results;
+        this.pokemons = [...this.pokemons, ...data.results];
         console.log(this.pokemons);
       },
 
@@ -44,16 +44,8 @@ export class PokemonListComponent implements OnInit {
       }
     );
   }
-
-  pagePrevious(): void {
-    this.page = this.page === 1 ? this.page : this.page - 1;
-    console.log('pagina: ', this.page);
-    this.getter();
-  }
-
   pageNext(): void {
     this.page = this.page + 1;
-    console.log('pagina: ', this.page);
     this.getter();
   }
 }

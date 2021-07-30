@@ -1,12 +1,9 @@
 <h1>Lista de Pokemons</h1>
-<h3>Página {{ page }}</h3>
-
 <app-pokemon-card
   *ngFor="let pokemon of pokemons"
   [pokemon]="pokemon"
 ></app-pokemon-card>
 
 <div class="buttons">
-  <button class="button" (click)="pagePrevious()">Anterior</button>
-  <button class="button" (click)="pageNext()">Próximo</button>
+  <button class="button" (click)="pageNext()">Carregar mais</button>
 </div>
